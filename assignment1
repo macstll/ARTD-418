@@ -20,16 +20,29 @@
   width: 100%;
   height: auto;
   margin: auto;
-  background: grey;
+  background-color: grey;
   }
    .container {
   width: 100%;
   height: auto;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  }
+  .row {
+  width:100%;
+  }
+  .col-sm {
+  background-color: yellow;
+  }
+  .col-sm {
+  font-size: 14px;
+  color: blue;
   }
   </style>
     <header>
-    
+      <
     </header>
       <div class="container-wrapper>
         <div class="container">
