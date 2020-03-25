@@ -1,0 +1,1347 @@
+/* external css: flickity.css */
+
+* { box-sizing: border-box; }
+
+body { 
+  font-family: sans-serif; 
+  background:black;
+  width: 100%;
+  height: 100%;
+  overflow-x:hidden;
+
+}
+
+/* nav */
+    nav {
+    display: inline-block;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    align-items: center;
+    justify-content: center;
+    }
+    .nav-container {
+    width:100%;
+    height: 3rem;
+    }
+    .clickies-wrapper {
+    
+    height: 3rem;
+    color: black;
+    }
+
+    @media only screen and (max-width: 768px) {
+      /* For mobile phones: */
+     .clickies-wrapper {
+      height:  1rem;
+      }
+    }
+
+    .clickies-container {
+    height: 3rem;
+    }
+    .padding-wrapper {
+    width:100vw;
+    }
+    .padding-container {
+    height: 19vh;
+    }
+    .logo {
+    width:100%;
+    margin: auto;
+    text-align: center;
+    margin-right: 50px;
+    }
+
+    .name h1 {
+    position: fixed;
+    padding-top: 14px;
+    padding-right: 25px;
+
+    width:100%;
+    margin: auto;
+    color: white;
+
+    font-family: ibm-plex-mono, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.5vh;
+    text-align: right;
+    text-transform: uppercase;
+    opacity: .7;
+    }
+    @media only screen and (max-width: 768px) {
+      /* For mobile phones: */
+      .name h1 {
+color: black;    }
+    }
+    .vertical h4 {
+    margin-block-start: 0;
+    width:100%;
+    margin: auto;
+    color: white;
+
+    font-family: ibm-plex-mono, sans-serif;
+    margin-block-end: 0;
+    color: white;
+    transform: rotate(270deg);
+    transform-origin: top left;
+    opacity: .5;
+    font-size: 1.3vh;;
+
+
+    font-family: ibm-plex-mono, sans-serif;
+
+    font-weight: 300;
+    
+    font-style: normal;
+
+    text-transform: uppercase;
+    letter-spacing: .115em;
+    }
+
+    h4 {
+    margin-bottom: 10px;
+    }
+
+    .vertical h2 {
+    color: white;
+    }
+
+    main {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: black;
+    opacity: 1;
+    }
+    aside {
+      background-color: black;
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .aside-section {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+
+    }
+
+    .aside-left {
+    display: none;
+    width: 40%;
+    left: 0;
+    background-color:grey;
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
+    }
+    .aside-right {
+    width: 100%;
+    right: 0;
+    background-color: black;
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+    }
+    .aside-list {
+    background-color: black;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 150px;
+    text-align: left;
+    padding-left: 30px;
+
+    font-family: ibm-plex-mono, sans-serif;
+    font-weight: 300;
+    font-style: normal;  
+    z-index: 9999;
+    }
+    .aside-content {
+    margin-top: 150px;
+    padding: 0 30px;
+    position: relative;
+    color: white;
+    text-align: center;
+    }
+
+    .aside-list li {
+    margin-bottom: 20px;
+    }
+    .aside-anchor::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    background-color: grey;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 3px;
+    }
+    .aside-anchor::before {
+    border-radius: 3px;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    background-color: #fff;
+    left: 0;
+    height: 3px;
+    z-index: 1;
+    width: 50%;
+    -webkit-transition: transform 0.2s ease-in-out;
+    -o-transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+    }
+    .aside-anchor:hover:before {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    }
+    .aside-anchor {
+    padding-bottom: 7px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 4vh;
+    position: relative;
+    font-weight: 500;
+    }
+    input[type="checkbox"] {
+    display: none;
+    }
+    input[type="checkbox"]:checked ~ aside .aside-left {
+    transform: translateY(0%);
+    }
+
+    input[type="checkbox"]:checked ~ aside .aside-right {
+    transform: translateX(0%);
+    }
+
+    input[type="checkbox"]:checked ~ label .bar {
+    background-color: #fff;
+    }
+
+    input[type="checkbox"]:checked ~ label .top {
+    -webkit-transform: translateY(0px) rotateZ(45deg);
+    -moz-transform: translateY(0px) rotateZ(45deg);
+    -ms-transform: translateY(0px) rotateZ(45deg);
+    -o-transform: translateY(0px) rotateZ(45deg);
+    transform: translateY(0px) rotateZ(45deg);
+    }
+
+    input[type="checkbox"]:checked ~ label .bottom {
+    -webkit-transform: translateY(-15px) rotateZ(-45deg);
+    -moz-transform: translateY(-15px) rotateZ(-45deg);
+    -ms-transform: translateY(-15px) rotateZ(-45deg);
+    -o-transform: translateY(-15px) rotateZ(-45deg);
+    transform: translateY(-15px) rotateZ(-45deg);
+    }
+
+    input[type="checkbox"]:checked ~ label .middle {
+    width: 0;
+    }
+
+    .middle {
+    margin: 0 auto;
+    }
+
+    label {
+    top: 10px;
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 10px;
+    z-index: 3;
+    position: fixed;
+    }
+
+    .bar {
+    display: block;
+    background-color:white;
+    width: 30px;
+    height: 3px;
+    border-radius: 5px;
+    margin: 5px auto;
+    transition: background-color 0.4s ease-in, transform 0.4s ease-in,
+        width 0.4s ease-in;
+        opacity: 1;
+    }
+
+    /*
+    h1 {
+    margin: 0;
+    position: relative;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    text-align: center;
+    font-size: 30px;
+    }
+    */
+    h1 span {
+    font-size: 20px;
+    display: block;
+    }
+
+    p {
+    font-size: 30px;
+    }
+
+    .button {
+    display: inline-block;
+    background-image: none;
+    border: none;
+    background-color: transparent;
+    padding-bottom: 7px;
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    padding: 7px 50px;
+    border: 2px solid white;
+    }
+
+/*
+    @media (min-width: 992px) {
+    h1 {
+        font-size: 40px;
+    }
+    */
+    .aside-left {
+        display: block;
+    }
+
+    .aside-right {
+        width: 100%;
+        background: black;
+    }
+    .background {
+      background: black;
+    }
+
+/* new  */
+.header-container {
+
+    background-color: transparent;
+    height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  }
+  
+  #hamburger-icon {
+    position: fixed;
+    top: 28px;
+    left: 25px;
+    height: 27px;
+    width: 50px;
+    cursor: pointer;
+    display: block;
+  transition: all 1s cubic-bezier(.19, 1, .22, 1);
+      z-index: 100;
+  }
+  
+  #hamburger-icon {
+    position: fixed;
+    top: 28px;
+    left: 25px;
+    height: 27px;
+    width: 50px;
+    cursor: pointer;
+    display: block;
+  transition: all 1s cubic-bezier(.19, 1, .22, 1);
+      z-index: 100;
+  }
+  
+  /* ----------------- */
+  #hamburger-icon .line {
+  
+    position: absolute;
+    display: block;
+    background: #fff;
+    width: 22px;
+    height: 2px;
+    left: 0;
+    transition: all 0.6s cubic-bezier(.5, .1, 0, 1.2);
+    -webkit-transition: all 0.6s cubic-bezier(.5, .1, 0, 1.2);
+    -moz-transition: all 0.6s cubic-bezier(.5, .1, 0, 1.2);
+   }
+    #hamburger-icon .line.line-1 {
+      top: 0px;
+    }
+    #hamburger-icon .line.line-2 {
+      top: 7px;
+    }
+    #hamburger-icon .line.line-3 {
+      top: 14px;
+    }
+    #hamburger-icon.active .line-1 {
+      transform: translateY(7px) translateX(0) rotate(45deg);
+      -webkit-transform: translateY(7px) translateX(0) rotate(45deg);
+      -moz-transform: translateY(7px) translateX(0) rotate(45deg);
+    }
+    #hamburger-icon.active .line-2 {
+      opacity: 0;
+    }
+    #hamburger-icon.active .line-3 {
+      transform: translateY(-7px) translateX(0) rotate(-45deg);
+      -webkit-transform: translateY(-7px) translateX(0) rotate(-45deg);
+      -moz-transform: translateY(-7px) translateX(0) rotate(-45deg);
+    }
+  #overlay-container {
+      width: 100%;
+      height: 100%;
+      padding: 50px;;
+      margin-top: 200px;
+  }
+  
+  .burger-nav {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: red;
+    position: fixed;
+      z-index: 99;
+  }
+  
+  #overlay-container ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        display: inline-block;
+        height: 100%;
+        position: relative;
+  }
+  #overlay-container ul li {
+        display: block;
+        height: 20%;
+        height: calc(100% / 5);
+        min-height: 54px;
+  }
+  /* overlay font edit */
+  #overlay-container ul li a {
+        display: block;
+        color: white;
+        text-decoration:none;
+        -webkit-transition: color 0.2s;
+        transition: color 0.2s;
+      font-size:calc(90px + .8vw);
+      line-height:calc(90px + .8vw);
+      font-family: 'Canela Web';
+      font-weight: 400;
+      font-style: bold;
+      font-stretch: normal;
+      text-transform:uppercase;
+  }
+  @media screen and (min-width:1600px) {
+      #overlay-container ul li a { 
+      font-size:calc(90px + .8vw);
+      line-height:calc(90px + .8vw);
+      }
+  }
+  #overlay-container ul li a:hover, #overlay-container ul li a:focus {
+        color: white;
+  }
+  
+  /* burger */
+  
+  #everything {
+       width: 100%;
+       margin: auto;    
+       }
+  
+  /* header */
+  #page-content {
+      z-index: 10;
+  }
+  .main-container {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-align: center;
+      align-items: center;
+  }
+  /*header*/
+  .header {
+  position: fixed;
+    width: calc(100vw - 5vw);
+    margin: 0px 0 0;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    position: fixed;
+    display: -ms flexbox;
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+    background-color: transparent;
+    z-index: 100; 
+  overflow: visible;
+      opacity: .8;
+  
+  }
+  .header-container {
+      width: 100%;
+  }
+  .header a {
+    float: left;
+    color: lightgrey;
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 12px; 
+    line-height: 25px;
+    border-radius: 4px;
+      font-family: 'Canela Web';
+      font-weight: 400;
+      font-style: bold;
+      font-stretch: normal;
+  }
+  .header a.logo {
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .header a.icon {
+      padding-top: 10vh;
+      height: 17vh;
+      width: 23vh;
+      overflow: visible;
+      padding-left: 9.5vh;
+  }
+  .header a.icon img {
+      width: 100%;
+      height: 100%;
+      -webkit-transform: translate(-50%,-50%) scale(1);
+      transform: translate(-50%,-50%) scale(1);
+  }
+  .icon-container {
+      width: 100%;
+      height:auto;
+  
+  }
+  .header a.about {
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    color: grey;
+  }
+  
+  
+  .header a:hover {
+      color: red;
+  }
+  
+  .header a.active {
+    background-color: transparent;
+    color: white;
+  }
+  
+  .header-right {
+    float: right;
+  }
+  #root{
+      overflow: hidden;
+          overflow-x: hidden;
+          overflow-y: hidden;
+  }
+  
+  
+  
+  
+  /* top text */
+  
+  /* hero image */
+  
+  #image-wrapper {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+  }
+      
+  #image-wrapper {
+      width: 100vw;
+      height: 100vh; 
+      padding-bottom: 10%;
+  }
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #image-wrapper {
+      width: 100vw;
+      height: 100vh; 
+      margin-bottom: 10vh;    }
+  }
+  .image-container {
+      position: absolute;
+      top: 48vh;
+      left: 50%;
+      -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+      -o-transform: translate(-50%,-50%);
+      transform: translate(-50%,-50%);
+      height: 40vh;
+      pointer-events: none;
+      min-width: 500px;
+      max-width: 600px;
+      overflow: visible;
+      overflow-x: visible;
+      overflow-y: visible;
+      overflow-x: visible;
+      overflow-y: visible; 
+  }
+  .image-container {
+      padding-left: 35px;
+  }
+  #intro-container {
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width:700px;
+  }
+  
+  .intro-title {
+      margin-top:27vh;
+    margin-left: 20vh;
+    padding: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+      opacity: 0;
+  }
+  
+  .intro-text {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 400;
+      font-style: bold;
+      font-stretch: normal;
+      font-size: 2.5vh;
+      color: white;
+      opacity: .75;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .intro-text {
+      font-size: 2vh;
+    }
+  }
+  #float {
+      max-width: 450px;
+      opacity: .75;
+  }
+  .text-container {
+      width: 100%;
+      height: 100%;
+      padding: 10%;
+  }
+  
+  .top-title-text {
+    text-align: left;
+    position: absolute;
+    top: 75vh;
+    color: white;
+    padding-left: 15%;
+  }
+  
+  .top-title-text {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 400;
+      font-style: bold;
+      font-stretch: normal;
+      font-size: 1vh;
+      text-transform: uppercase;
+  }
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+.top-title-text {
+    top: 70vh;
+   }
+  }
+  .top-title span {
+      font-family: 'GiraffeyRegular';
+      font-weight: 400;
+      font-style: bold;
+      font-stretch: normal;
+      font-size: 11.1vh;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+  }
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .top-title span {
+      font-size: 9.1vh;
+    }
+  }
+  .left-container {
+      width: 100%;
+  }
+  .left-title-text {
+    margin-left: 20px;
+    position: absolute;
+    top: 17vh;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+  .left-title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 400;
+      font-style: bold;
+      font-stretch: normal;
+      font-size: 1.5vh;
+      opacity: .75;
+  }
+  .left-title span {
+      font-family: 'IBM Plex Mono', monospace;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-style: bold;
+      font-stretch: normal;
+      font-size: 2vh;
+      opacity: .85;
+  }
+  /* right */
+  .right-title-text {
+    position: absolute;
+    top: 17vh;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+  .right-title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 400;
+      font-style: bold;
+      font-stretch: normal;
+      font-size: 1.5vh;
+      opacity: .75;
+  }
+  .right-title span {
+      font-family: 'IBM Plex Mono', monospace;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-style: bold;
+      font-stretch: normal;
+      font-size: 2vh;
+      opacity: .85;
+  }
+  .quad-container {
+      height: 100%;
+      width: 100%;
+  }
+  .quad-img {
+      width: 100%;
+      height: 100%;
+      -webkit-transform: translate(-50%,-50%) scale(1);
+      transform: translate(-50%,-50%) scale(1);
+  }
+  /* row */
+  
+  .row1 {
+    margin: 17% auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+      max-width:900px;
+  }
+  .row2 {
+    margin: 15% auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+      max-width:900px;
+  }
+  /* Create four equal columns */
+  .column {
+    flex: 25%;
+    padding: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* On screens that are 992px wide or less, go from four columns to two columns */
+  @media screen and (max-width: 1000px) {
+    .column { 
+    flex: 50%;
+    padding:0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+  }
+  
+  /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 1000px) {
+  .about_table_wrapper {
+      width: 100%;
+      padding:7%;
+      margin-left: 10px;
+      margin-right: 10px;
+      display: inline-block;
+  
+  }
+  }
+  .about_table_wrapper {
+      width: 100%;
+      padding:9%;
+      display: inline-block;
+  }
+  /*about detail */
+  .about_detail_wrapper {
+      width: 100%;
+      padding:5%;
+  }
+  
+  .project_container  {
+      grid-column-start: 1;
+      grid-column-end: 10;
+  }
+  
+  .box___ {
+    top: 0px;
+    border-bottom: 1.25px solid white;
+    border-radius: 0px;
+    background-color: transparent;
+    padding: 1em;
+    color: whitesmoke;
+    min-width: 280px;
+    max-width: 400px;
+    justify-content: center;
+      opacity: 1;
+  }
+  
+  .box__ {
+    top: 0px;
+    border-radius: 0px;
+    background-color: transparent;
+    padding: 1em;
+    color: whitesmoke;
+    min-width: 250px;
+    max-width: 400px;
+  
+  }
+  .box_ {
+    border-radius: 0px;
+    background-color: transparent;
+    padding: 1em;
+    color: whitesmoke;
+    min-width: 250px;
+    max-width: 400px;
+  
+  
+  }
+  .nested1 {
+    border-radius: 0px;
+    background-color: transparent;
+  }
+  .nested1, .nested2 {
+    border-radius: 0px;
+    background-color: transparent;
+    padding-bottom: .5em;
+    line-height:2.5vh;
+  font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    font-stretch: normal;
+      letter-spacing: .025em;
+      font-size: 1.5vh;
+      opacity: .95;
+      
+  }
+  
+  .box1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: transparent;
+    width: 100%;
+  }
+  .box1 span {
+          margin-right: 24px;
+  
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 400;
+      font-style: bold;
+      font-stretch: normal;
+      font-size: 1.75vh;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: white;
+      opacity: 1;
+  }
+  .box2 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: transparent;
+    width: 100%;
+  }
+  .box2 span {
+      font-family: 'Canela Web';
+      font-weight: 400;
+      font-style: bold;
+      font-stretch: normal;
+      font-size: 2vh;
+      margin-right: 24px;
+  }
+  * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+  }
+  :after, :before {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+  }
+  /* display */
+  * {
+    box-sizing: border-box;
+  }
+  
+  .item {
+    width: 200px;
+    height: 200px;
+    margin: 50px auto;
+    padding-top: 75px;
+    background: #ccc;
+    text-align: center;
+    color: #FFF;
+    font-size: 3em;
+  }
+  .item1 {
+    width: 100%;
+    height: auto;
+  
+  }
+  
+  /* iframe */
+  [style*="--aspect-ratio"] > :first-child {
+    width: 100%;
+  }
+  [style*="--aspect-ratio"] > img {  
+    height: auto;
+  } 
+  @supports (--custom:property) {
+    [style*="--aspect-ratio"] {
+      position: relative;
+    }
+    [style*="--aspect-ratio"]::before {
+      content: "";
+      display: block;
+      padding-bottom: calc(100% / (var(--aspect-ratio)));
+    }  
+    [style*="--aspect-ratio"] > :first-child {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+    }  
+  }
+  /* display */
+  
+  /*about*/
+  #content_wrapper {
+      margin: 10px auto;
+      padding:0px;
+  }
+  #hdd {
+      opacity: 100%;
+  }
+  .about_intro {
+      position: relative;
+      overflow: hidden;
+          overflow-x: hidden;
+          overflow-y: hidden;
+      height: 100vh;
+  }
+  .about_intro {
+      opacity: 0;
+      -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+      -o-transform: scale(0);
+      transform: scale(0);
+  }
+  /* 
+  @media (max-width: 767px)
+  .about_logo {
+      width: 100%;
+      max-width: 60%;
+      height: auto;
+      margin-top: -10vh;
+  }
+ 
+  .about_logo figure {
+      width: auto;
+      height: 100%;
+  }
+  @media (max-width: 767px)
+  .about_logo {
+      figure {
+      width: 100%;
+          height: auto;}
+  }
+   */
+  .figure {
+      margin: 0;
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: 0px;
+      margin-left: 0px;
+  }
+  .about_logo figure img {
+      width: 100%;
+      height: auto;
+  }
+  #knife_wrapper {
+  margin-top: 30vh;
+  width:100%;
+  overflow: visible;
+  }
+  #inner_wrapper {
+      max-width: 350px; 
+      margin: 0 auto !important; 
+      float: none !important; }
+  
+
+  
+  /* Place text in the middle of the image */
+  .hero-text {
+    text-align: left;
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+  .hero-text {
+      font-family: 'Canela Web';
+      font-weight: 400;
+      font-style: bold;
+      font-stretch: normal;
+      font-size: 1vh;
+  }
+  /* preview section */
+  #preview-wrapper {
+    height: 55vw;
+      margin: 0 auto;
+      padding: 1%;
+  margin-top: 10vh;
+  
+  }
+  
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #preview-wrapper {
+      height:40vh;
+      margin: 0 auto;
+      padding: 2%;
+        margin-top: 10vh;
+    }
+  }
+  .preview-image {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), 
+        url('./img/hdd_pt_2.gif');
+  
+    /* Set a specific height */
+    height: 60%;
+  
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+      height: 100%;
+      border-radius: 7vh;
+      z-index: 1;
+  }
+  /* movie section */
+  #result-wrapper {
+    height: 75vh;
+      margin: 0 auto;
+      padding: 1%;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #result-wrapper {
+      height: 40vh;
+      margin: 0 auto;
+      padding: 2%;
+    }
+  }
+  /* movie section */
+  #movie-wrapper {
+    height: 75vh;
+      margin: 0 auto;
+      padding: 1%;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #movie-wrapper {
+      height: 40vh;
+      margin: 0 auto;
+      padding: 2%;
+    }
+  }
+  .movie-image {
+    /* Set a specific height */
+    height: 60%;
+  
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+      height: 100%;
+      border-radius: 7vh;
+      z-index: 1;
+  }
+  
+  /* Place text in the middle of the image */
+  .movie-text {
+    width:400px;
+    position: absolute;
+    top: 100%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+  .movie-text h1 {
+      font-family: 'Canela Web';
+      font-weight: 400;
+      font-style: bold;
+      font-stretch: normal;
+      text-align: left;
+      color: whitesmoke;
+      font-size: 4.25vh;
+  
+  }
+  .movie-text p {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 400;
+      font-style: bold;
+      font-stretch: normal;
+      text-align: center;
+      color: whitesmoke;
+      font-size: 12px;
+  
+  }
+  /* scrolling */
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: ". . . . . . ." ". far-left left center right far-right ." ". far-left left center right far-right ." ". far-left left center right far-right .";
+  }
+  .grid-container {
+      height: 80vh;
+      padding-top: 2.5vh;
+  }
+  
+  .left { grid-area: left; }
+  
+  .right { grid-area: right; }
+  
+  .center { grid-area: center; }
+  
+  .far-left { grid-area: far-left; }
+  
+  .far-right { grid-area: far-right; }
+  /* center ___________________________________________*/
+  .grid-container .center .vertical-title {
+      margin: 85px auto 0 auto;
+      margin-top: 85px;
+      margin-right: auto;
+      margin-bottom: 0px;
+      margin-left: auto;
+      width: 10px;
+          text-align: center;
+  
+  }
+  .grid-container .center .vertical-title h2{
+      margin: auto;
+          text-align: center;
+      color: transparent;
+  }
+  .grid-container .center .vertical-title h2{
+      font-family: 'Canela Web';
+      font-weight: 400;
+      font-style: bold;
+      font-stretch: normal;
+      text-align: center;
+      letter-spacing: 24px;
+      color: transparent;
+      text-align: center;
+  }
+  /* far left _____________________________________*/
+  .grid-container .far-left .vertical-title {
+      margin: 85px auto 0 auto;
+      margin-top: 0px;
+      margin-right: auto;
+      margin-bottom: 0px;
+      margin-left: auto;
+      width: 10px;
+  }
+  .grid-container .far-left .vertical-title h2{
+      margin: auto;
+  }
+  .grid-container .far-left .vertical-title h2{
+      font-family: 'Canela Web';
+      font-weight: 400;
+      font-style: bold;
+      font-stretch: normal;
+      text-align: center;
+      letter-spacing: 24px;
+      color: transparent;
+  }
+  /* far right ______________________________________*/
+  .grid-container .far-right .vertical-title {
+      margin: 85px auto 0 auto;
+      margin-top: 85px;
+      margin-right: auto;
+      margin-bottom: 0px;
+      margin-left: auto;
+      width: 10px;
+  }
+  .grid-container .far-right .vertical-title h2{
+      margin: auto;
+  }
+  .grid-container .far-right .vertical-title h2{
+      font-family: 'Canela Web';
+      font-weight: 400;
+      font-style: bold;
+      font-stretch: normal;
+      text-align: center;
+      letter-spacing: 24px;
+      color: transparent;
+  }
+  /* left __________________________________*/
+  .left-img img {
+      max-width: 100%; 
+      min-width: 19vh;
+  }
+  
+  .left-text #left {
+      font-family: 'Canela Web';
+      font-weight: 400;
+      font-style: bold;
+      font-stretch: normal;
+      color: whitesmoke;
+  }
+  .left-text {
+      margin-top: 85px;
+      margin-right: auto;
+      margin-bottom: 0px;
+      margin-left: auto;
+      margin-top: 85px;
+      margin-right: auto;
+      margin-bottom: 0px;
+      margin-left: auto;
+      width: 10px;
+  }
+  h4 {
+      font-family: 'GiraffeyRegular';
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      font-weight: 400;
+      font-style: bold;
+      font-stretch: normal;
+      color: whitesmoke;
+      font-size: 5vh;
+      
+  }
+  /* right __________________________________*/
+  
+  .right-img img {
+      max-width: 100%; 
+      min-width: 19vh;
+      overflow: visible;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    body {
+      width: 100%;
+    }
+  }
+/* new */
+/* additions */
+h2 {
+    color: white;
+    font-family: 'IBM Plex Mono', monospace;    font-weight: 300;
+    font-style: normal;
+    font-size: 2.15vh;
+    line-height: 3.5vh;
+  }
+
+
+    .first-container {
+      margin: auto;
+      max-width: 600px;
+  }
+  @media (max-width: 768px) {
+      .first-container {
+          margin: 0 20px;
+      }
+    }
+  h1 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    font-stretch: normal;
+    font-size: 2vh;
+    opacity: .75;
+    }
+    
+    .showcase-container {
+      margin: 0 45px;
+    }
+
+    .bottom-text {
+
+      width:100%;
+        margin-left: calc(100vw - 65vw);
+      }
+      @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+       .bottom-text {
+        width:100%;
+        margin-left: 12vw;        }
+      }
+      .bottom-text h2{
+      
+          font-family: 'Canela Web';
+          font-weight: 400;
+          font-style: bold;
+          font-stretch: normal;
+          font-size: 11.1vh;
+          text-transform: uppercase;
+          letter-spacing: .15em;  
+      }
+      .bottom-text h2:hover {
+      color: red;
+      }
