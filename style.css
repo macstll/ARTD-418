@@ -1,0 +1,894 @@
+/* external css: flickity.css */
+
+* { box-sizing: border-box; }
+
+body { 
+  font-family: sans-serif; 
+  background:black;
+
+
+}
+/* */
+nav {
+  display: inline-block;
+  width: 100%;
+  height: 20%;
+  background: transparent;
+  align-items: center;
+  justify-content: center;
+}
+.nav-container {
+  width:100%;
+  height: 3rem;
+}
+.clickies-wrapper {
+  width:100%;
+  height: 3rem;
+}
+.clickies-container {
+  height: 3rem;
+}
+.padding-wrapper {
+  width:100vw;
+}
+.padding-container {
+  height: 19vh;
+}
+.logo {
+  width:100%;
+  margin: auto;
+  text-align: center;
+  margin-right: 50px;
+}
+.name h1 {
+  position: fixed;
+  padding-top: 14px;
+  padding-right: 25px;
+
+  width:100%;
+  margin: auto;
+  color: white;
+
+  font-family: ibm-plex-mono, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.5vh;
+  text-align: right;
+  text-transform: uppercase;
+  opacity: .7;
+}
+.vertical h4 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  color: white;
+  transform: rotate(270deg);
+  transform-origin: top left;
+  opacity: .5;
+  font-size: 1.3vh;;
+
+
+  font-family: ibm-plex-mono, sans-serif;
+
+  font-weight: 300;
+  
+  font-style: normal;
+
+  text-transform: uppercase;
+  letter-spacing: .115em;
+
+}
+
+h4 {
+  margin-bottom: 10px;
+}
+
+.vertical h2 {
+  color: white;
+}
+
+main {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.aside-section {
+  top: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+.aside-left {
+  display: none;
+  width: 40%;
+  left: 0;
+  background-color:grey;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+  transition: transform 0.4s ease-in-out;
+}
+.aside-right {
+  width: 100%;
+  right: 0;
+  background-color: black;
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+}
+.aside-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 150px;
+  text-align: left;
+  padding-left: 30px;
+
+  font-family: ibm-plex-mono, sans-serif;
+  font-weight: 300;
+  font-style: normal;  
+}
+.aside-content {
+  margin-top: 150px;
+  padding: 0 30px;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.aside-list li {
+  margin-bottom: 20px;
+}
+.aside-anchor::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background-color: grey;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 3px;
+}
+.aside-anchor::before {
+  border-radius: 3px;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background-color: #fff;
+  left: 0;
+  height: 3px;
+  z-index: 1;
+  width: 50%;
+  -webkit-transition: transform 0.2s ease-in-out;
+  -o-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+.aside-anchor:hover:before {
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transform: translateX(100%);
+}
+.aside-anchor {
+  padding-bottom: 7px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 4vh;
+  position: relative;
+  font-weight: 500;
+}
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"]:checked ~ aside .aside-left {
+  transform: translateY(0%);
+}
+
+input[type="checkbox"]:checked ~ aside .aside-right {
+  transform: translateX(0%);
+}
+
+input[type="checkbox"]:checked ~ label .bar {
+  background-color: #fff;
+}
+
+input[type="checkbox"]:checked ~ label .top {
+  -webkit-transform: translateY(0px) rotateZ(45deg);
+  -moz-transform: translateY(0px) rotateZ(45deg);
+  -ms-transform: translateY(0px) rotateZ(45deg);
+  -o-transform: translateY(0px) rotateZ(45deg);
+  transform: translateY(0px) rotateZ(45deg);
+}
+
+input[type="checkbox"]:checked ~ label .bottom {
+  -webkit-transform: translateY(-15px) rotateZ(-45deg);
+  -moz-transform: translateY(-15px) rotateZ(-45deg);
+  -ms-transform: translateY(-15px) rotateZ(-45deg);
+  -o-transform: translateY(-15px) rotateZ(-45deg);
+  transform: translateY(-15px) rotateZ(-45deg);
+}
+
+input[type="checkbox"]:checked ~ label .middle {
+  width: 0;
+}
+
+.middle {
+  margin: 0 auto;
+}
+
+label {
+  top: 10px;
+  display: inline-block;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 10px;
+  z-index: 3;
+  position: fixed;
+}
+
+.bar {
+  display: block;
+  background-color:white;
+  width: 30px;
+  height: 3px;
+  border-radius: 5px;
+  margin: 5px auto;
+  transition: background-color 0.4s ease-in, transform 0.4s ease-in,
+    width 0.4s ease-in;
+    opacity: .5;
+}
+
+/*
+h1 {
+  margin: 0;
+  position: relative;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  text-align: center;
+  font-size: 30px;
+}
+*/
+h1 span {
+  font-size: 20px;
+  display: block;
+}
+
+p {
+  font-size: 30px;
+}
+
+.button {
+  display: inline-block;
+  background-image: none;
+  border: none;
+  background-color: transparent;
+  padding-bottom: 7px;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  color: white;
+  padding: 7px 50px;
+  border: 2px solid white;
+}
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 40px;
+  }
+  .aside-left {
+    display: block;
+  }
+
+  .aside-right {
+    width: 60%;
+  }
+}
+
+/* __________________________________________________________END NAV */
+
+
+/*added this css for title*/
+.feedback-title {
+  color: white;
+  display: table-cell;
+  width: 20px;
+  margin-right: 5px;
+  height: 100%;
+  border: 1px solid black;
+}
+
+/* -------------------------------- vertical */
+#vertical {
+  width:500px;
+  height:300px;
+}
+#vertical .carousel-cell.is-nav-selected {
+  background: transparent;
+  counter-increment: carousel-cell;
+  opacity: 1;
+}
+#vertical .carousel-cell {
+  background: transparent;
+  opacity: 0;
+}
+#vertical .carousel-cell {
+  width: 900px;
+  height:500px;
+  margin-top: 64%;
+}
+.vertical-wrapper {
+  height:1vh;
+  width: 50vh;
+  margin: auto;
+}
+.vertical-container {
+  height: 100%;
+  width:50vh;
+  margin-right: 55px;
+}
+
+@media only screen and (max-width: 600px) {
+  vertical-container {
+  height: 100%;
+  width:60vh;
+     }
+}
+.vertical-square {
+  width: 800px;
+  height:50%;
+  margin: auto;   
+}
+@media only screen and (max-width: 600px) {
+  vertical-square {
+  width: 334px;
+  height:50%;
+  margin: auto;   }
+}
+#vertical h2 {
+  display: block;
+  color: white;
+  text-align: left;
+}
+#titles h2 {
+  top: 0px;
+  font-family: 'GiraffeyRegular';
+  text-transform: uppercase;
+  letter-spacing: .115em;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 9.5vh;
+  line-height: 9vh;
+  color: white;
+  opacity: .65;
+  margin: auto;
+  -webkit-transform: skewY(-23deg) scaleX(0.78);
+  transform: skewY(-23deg) scaleX(0.78);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+#titles h3 {
+  text-align: left;
+  top: 0px;
+  font-family: ibm-plex-mono, sans-serif;
+
+  font-weight: 300;
+  
+  font-style: normal;  
+  text-transform: uppercase;
+  font-size: 2.5vh;
+  line-height: 1.25vh;
+  letter-spacing: .12em;
+  
+  color: white;
+  -webkit-transform: skewY(-23deg) scaleX(0.78);
+  transform: skewY(-23deg) scaleX(0.78);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+/* -------------------------------- vertical */
+#vertical {
+  overflow: visible;
+  pointer-events: none;
+
+}
+
+#vertical .carousel-cell {
+  background: transparent;
+}
+#vertical .carousel-cell {
+  width: 93%;
+  height:900px;
+}
+.vertical-wrapper {
+  height:0vh;
+}
+.vertical-container {
+  height: 100%;
+  width:100%;
+}
+.vertical-square {
+  width: 100%;
+  height:50%;
+  margin: auto;
+}
+#vertical h2 {
+  display: block;
+  color: white;
+  text-align: left;
+}
+#vertical h2 {
+  top: 0px;
+  font-family: 'GiraffeyRegular';
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5vh;
+  color: white;
+  opacity: .65;
+  margin: auto;
+}
+#vertical h3 {
+  text-align: left;
+  top: 0px;
+  font-family: 'B612 Mono', monospace;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5vh;
+  line-height: 1.25vh;
+  letter-spacing: .12em;
+  
+  color: white;
+  -webkit-transform: skewY(-23deg) scaleX(0.78);
+  transform: skewY(-23deg) scaleX(0.78);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+/* -------------------------------- main */
+#main #hdd {
+  background-image: url('img/hdd.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius:25%;
+}
+#hdd:hover {
+  background: white;
+  cursor: pointer;
+}
+
+#hdd:focus {
+  outline: none;
+  box-shadow: 0 0 0 5px #19F;
+}
+#hdd:active {
+  box-shadow: 0 0 0 5px #19F;
+}
+#main #artp {
+  background-image: 
+  linear-gradient(rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)), 
+  url('./img/flux1.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius:25%;
+
+}
+#main #rdc {
+  background-image: url('img/rdc.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius:25%;
+
+}
+#main #fm {
+  background-image: url('img/fm.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius:25%;
+
+}
+#main #biggie {
+  background-image: url('img/unsolved.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius:25%;
+
+}
+#main #kam {
+  background-image: url('img/relax.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius:25%;
+
+}
+#main #legion {
+  background-image: url('img/legion.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius:25%;
+}
+#main #misc {
+  background-image: url('img/hdd.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius:25%;
+}
+#main #balloons {
+  background-image: url('img/balloons.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius:25%;
+}
+.main-wrapper {
+  height:1vh;
+}
+.main-container {
+  width: calc(100vw - 40px);
+  margin: auto;
+}
+.main-square {
+  max-width: 41vh;
+  margin: auto;
+}
+/* -------------------------------- title */
+#titles {
+  pointer-events: none;
+}
+#titles .carousel-cell.is-nav-selected {
+  height: 500px;
+  background: transparent;
+  counter-increment: carousel-cell;
+}
+#titles .carousel-cell {
+  background: transparent;
+}
+#titles .carousel-cell {
+  width: 100%;
+  height:900px;
+  margin-top: 64%;
+}
+.title-wrapper {
+  height:45vh;
+  margin-top:100x;
+}
+.title-container {
+  height: 100%;
+  width:100%;
+  margin-left: 55px;
+}
+.title-square {
+  width: 334px;
+  height:50%;
+  margin: auto;   
+}
+@media only screen and (max-width: 600px) {
+ .title-square {
+  width: 334px;
+  height:50%;
+  margin: auto;   }
+}
+#titles h2 {
+  display: block;
+  color: white;
+  text-align: left;
+}
+#titles h2 {
+  top: 0px;
+  font-family: 'GiraffeyRegular';
+  text-transform: uppercase;
+  letter-spacing: .115em;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 9.5vh;
+  line-height: 9vh;
+  color: white;
+  opacity: .65;
+  margin: auto;
+  -webkit-transform: skewY(-23deg) scaleX(0.78);
+  transform: skewY(-23deg) scaleX(0.78);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+#titles h3 {
+  text-align: left;
+  top: 0px;
+  font-family: 'B612 Mono', monospace;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5vh;
+  line-height: 1.25vh;
+  letter-spacing: .12em;
+  
+  color: white;
+  -webkit-transform: skewY(-23deg) scaleX(0.78);
+  transform: skewY(-23deg) scaleX(0.78);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+/* -------------------------------- icon */
+#icons #hdd {
+  background-image: url('img/hdd_icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#icons #artp {
+  background-image: url('img/flux_1_icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#icons #rdc {
+  background-image: url('img/rdc_icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#icons #fm {
+  background-image: url('img/fm_icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#icons #biggie {
+  background-image: url('img/biggie_icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#icons #kam {
+  background-image: url('img/kam_icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#icons #legion {
+  background-image: url('img/legion_icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#icons #misc {
+  background-image: url('img/hdd_icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#icons #balloons {
+  background-image: url('img/balloons_icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+#icons .carousel-cell.is-nav-selected {
+  background: transparent;
+  transform: scale(.75);
+
+}
+#icons .carousel-cell {
+  height: 19vh;
+  background: transparent;
+  overflow: visible;
+  transform: scale(.5);
+
+}
+#icons {
+  color: black;
+}
+#icons .carousel-cell {
+  width: 151px;
+}
+.icon-wrapper {
+  height:19vh;
+}
+.icon-container {
+  width: 100%;
+  height:13vh;
+  margin: auto;
+}
+.icon-square {
+  max-width: 1000px;
+  height:14vh;
+  margin: auto;
+}
+/* -------------------------------- title */
+#button .carousel-cell.is-nav-selected {
+  height: 100%;
+  background: transparent;
+  counter-increment: carousel-cell;
+}
+#button .carousel-cell {
+  background: transparent;
+}
+#button .carousel-cell {
+  width: 100%;
+  height:900px;
+}
+.button-wrapper {
+  height:20vh;
+}
+.button-container {
+  height: 100%;
+  width:100%;
+}
+.button-square {
+  width: 334px;
+  height:50%;
+  margin: auto;
+}
+#button h2 {
+  display: block;
+  color: white;
+  text-align: left;
+}
+#button h2 {
+  text-align: center;
+  top: 0px;
+  text-decoration: none;
+  
+  font-family: ibm-plex-mono, sans-serif;
+
+  font-weight: 300;
+  
+  font-style: normal;
+
+  font-size: 2.25vh;
+  line-height: 1.25vh;
+  letter-spacing: .12em;
+  
+  color: white;
+
+  opacity: .75;
+}
+h2 {
+  text-decoration: none;
+}
+
+.project-name em a {
+  text-align: right;
+  top: 0px;
+  font-family: ibm-plex-mono, sans-serif;
+
+  font-weight: 300;
+  
+  font-style: normal;  font-weight: 400;
+  font-style: normal; 
+
+  font-size: 1.75vh;
+  line-height: 3.25vh;
+  margin-right: 10%;
+  text-decoration: none;
+
+    color: white;
+    opacity: 1;
+    letter-spacing: 0.025em;
+    }
+
+.project-name em a:hover, .project-name em a:focus{
+  text-align: right;
+  top: 0px;
+  font-weight: 400;
+  font-style: normal; 
+
+  font-size: 2.25vh;
+  line-height: 3.25vh;
+  margin-right: 10%;
+  text-decoration: none;
+
+    color: white;
+    text-transform: uppercase;
+    opacity: 1;
+    letter-spacing: 0.025em;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+a:hover {
+text-transform: uppercase;
+}
+#titles h3 {
+  text-align: left;
+  top: 0px;
+  text-transform: uppercase;
+  
+  font-family: ibm-plex-mono, sans-serif;
+
+  font-weight: 300;
+  
+  font-style: normal;
+
+  font-size: 2.25vh;
+  line-height: 1.25vh;
+  letter-spacing: .12em;
+  
+  color: white;
+  -webkit-transform: skewY(-23deg) scaleX(0.78);
+  transform: skewY(-23deg) scaleX(0.78);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  opacity: .75;
+}
+/* -------------------------------- end */
+.carousel {
+  background: transparent;
+}
+.carousel-main .carousel-cell {
+  margin-right: 20px;
+  background: transparent;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+}
+.carousel-nav .carousel-cell {
+  margin-right: 0px;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+}
+/*
+.carousel-main .carousel-cell,
+.carousel-nav .carousel-cell {
+  height: 100px;
+  margin-right: 20px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+}
+*/
+.carousel-main .carousel-cell {
+  width: 100%;
+  height:41vh;
+  line-height: 200px;
+
+    
+}
+.carousel-nav .carousel-cell {
+  width: 300px;
+  height: 16vh;
+  overflow: visible;
+}
+
+/* cell number */
+#icons .carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(carousel-cell);
+  font-size: 80px;
+  color: transparent;
+
+}
+
+
+.carousel-nav .carousel-cell {
+  width: 200px;
+}
+
+
+.carousel-nav .carousel-cell.is-selected {
+  background: lightblue;
+}
+.carousel-nav .carousel-cell.is-closest {
+  background: #ffd466;
+}
+
+
+.carousel-nav .carousel-cell.is-closest {
+  background: #ffd466;
+}
+.carousel-nav .carousel-cell.is-selected {
+  background: lightblue;
+}
+
+.carousel-nav .carousel-cell.is-nav-selected {
+  background: transparent;
+}
