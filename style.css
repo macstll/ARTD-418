@@ -1,13 +1,17 @@
 /* external css: flickity.css */
-
 * { box-sizing: border-box; }
-
 body { 
   font-family: sans-serif; 
   background:black;
-
-
-}
+  height: 100vh;
+  overflow-y:hidden;}
+@media only screen and (max-width: 600px) {
+ body {
+  font-family: sans-serif; 
+  background:black;
+  height: 85vh;
+  margin-top: 5vh;
+  overflow-y:hidden;}}
 /* */
 nav {
   display: inline-block;
@@ -17,46 +21,59 @@ nav {
   align-items: center;
   justify-content: center;
 }
+#logo {
+  width:60px; 
+  position: fixed; 
+  margin-right: 30px; 
+  margin-top:15px; 
+  z-index:99;}
+@media only screen and (max-width: 600px) {
+  #logo {
+    width:60px; 
+    position: absolute; 
+    margin-right: 50px; 
+    margin-top:15px; 
+    z-index:99;}}
 .nav-container {
   width:100%;
-  height: 3rem;
-}
+  height: 3rem;}
 .clickies-wrapper {
   width:100%;
-  height: 3rem;
-}
+  height: 3rem;}
 .clickies-container {
-  height: 3rem;
-}
+  height: 3rem;}
 .padding-wrapper {
   width:100vw;
-}
+  height:10vh;}
+@media only screen and (max-width: 600px) {
+  .padding-wrapper {
+    width:100vw;
+    height:6vh;}}
 .padding-container {
-  height: 19vh;
-}
+  height: 19vh;}
 .logo {
   width:100%;
   margin: auto;
   text-align: center;
-  margin-right: 50px;
-}
-.name h1 {
+  margin-right: 50px;}
+#name {
   position: fixed;
-  padding-top: 14px;
+  padding-top: 23px;
   padding-right: 25px;
-
   width:100%;
   margin: auto;
   color: white;
-
-  font-family: ibm-plex-mono, sans-serif;
+  font-family: trumpgothicpro, sans-serif;
+  font-weight: 400;
+  font-style: normal;  
   font-weight: 300;
   font-style: normal;
-  font-size: 1.5vh;
+  font-size: 2vh;
   text-align: right;
   text-transform: uppercase;
-  opacity: .7;
-}
+  letter-spacing: .115em;
+  text-decoration: none;
+  opacity: .7;}
 .vertical h4 {
   margin-block-start: 0;
   margin-block-end: 0;
@@ -65,39 +82,23 @@ nav {
   transform-origin: top left;
   opacity: .5;
   font-size: 1.3vh;;
-
-
   font-family: ibm-plex-mono, sans-serif;
-
   font-weight: 300;
-  
   font-style: normal;
-
   text-transform: uppercase;
-  letter-spacing: .115em;
-
-}
-
+  letter-spacing: .115em;}
 h4 {
-  margin-bottom: 10px;
-}
-
+  margin-bottom: 10px;}
 .vertical h2 {
-  color: white;
-}
-
+  color: white;}
 main {
   height: 100%;
   position: relative;
-  overflow: hidden;
-}
-
+  overflow: hidden;}
 .aside-section {
   top: 0;
   bottom: 0;
-  position: absolute;
-}
-
+  position: absolute;}
 .aside-left {
   display: none;
   width: 40%;
@@ -108,8 +109,7 @@ main {
   -ms-transform: translateY(-100%);
   -o-transform: translateY(-100%);
   transform: translateY(-100%);
-  transition: transform 0.4s ease-in-out;
-}
+  transition: transform 0.4s ease-in-out;}
 .aside-right {
   width: 100%;
   right: 0;
@@ -119,31 +119,25 @@ main {
   -ms-transform: translateX(100%);
   -o-transform: translateX(100%);
   transform: translateX(100%);
-  transition: transform 0.4s ease-in-out;
-}
+  transition: transform 0.4s ease-in-out;}
 .aside-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  margin-top: 150px;
+  margin-top: 70px;
   text-align: left;
   padding-left: 30px;
-
   font-family: ibm-plex-mono, sans-serif;
   font-weight: 300;
-  font-style: normal;  
-}
+  font-style: normal;  }
 .aside-content {
-  margin-top: 150px;
+  margin-top: 10px;
   padding: 0 30px;
   position: relative;
   color: white;
-  text-align: center;
-}
-
+  text-align: center;}
 .aside-list li {
-  margin-bottom: 20px;
-}
+  margin-bottom: 20px;}
 .aside-anchor::after {
   content: "";
   position: absolute;
@@ -152,8 +146,7 @@ main {
   left: 0;
   right: 0;
   height: 3px;
-  border-radius: 3px;
-}
+  border-radius: 3px;}
 .aside-anchor::before {
   border-radius: 3px;
   content: "";
@@ -166,62 +159,44 @@ main {
   width: 50%;
   -webkit-transition: transform 0.2s ease-in-out;
   -o-transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
-}
+  transition: transform 0.2s ease-in-out;}
 .aside-anchor:hover:before {
   -webkit-transform: translateX(100%);
   -moz-transform: translateX(100%);
   -ms-transform: translateX(100%);
   -o-transform: translateX(100%);
-  transform: translateX(100%);
-}
+  transform: translateX(100%);}
 .aside-anchor {
   padding-bottom: 7px;
   color: #fff;
   text-decoration: none;
   font-size: 4vh;
   position: relative;
-  font-weight: 500;
-}
+  font-weight: 500;}
 input[type="checkbox"] {
-  display: none;
-}
+  display: none;}
 input[type="checkbox"]:checked ~ aside .aside-left {
-  transform: translateY(0%);
-}
-
+  transform: translateY(0%);}
 input[type="checkbox"]:checked ~ aside .aside-right {
-  transform: translateX(0%);
-}
-
+  transform: translateX(0%);}
 input[type="checkbox"]:checked ~ label .bar {
-  background-color: #fff;
-}
-
+  background-color: #fff;}
 input[type="checkbox"]:checked ~ label .top {
   -webkit-transform: translateY(0px) rotateZ(45deg);
   -moz-transform: translateY(0px) rotateZ(45deg);
   -ms-transform: translateY(0px) rotateZ(45deg);
   -o-transform: translateY(0px) rotateZ(45deg);
-  transform: translateY(0px) rotateZ(45deg);
-}
-
+  transform: translateY(0px) rotateZ(45deg);}
 input[type="checkbox"]:checked ~ label .bottom {
   -webkit-transform: translateY(-15px) rotateZ(-45deg);
   -moz-transform: translateY(-15px) rotateZ(-45deg);
   -ms-transform: translateY(-15px) rotateZ(-45deg);
   -o-transform: translateY(-15px) rotateZ(-45deg);
-  transform: translateY(-15px) rotateZ(-45deg);
-}
-
+  transform: translateY(-15px) rotateZ(-45deg);}
 input[type="checkbox"]:checked ~ label .middle {
-  width: 0;
-}
-
+  width: 0;}
 .middle {
-  margin: 0 auto;
-}
-
+  margin: 0 auto;}
 label {
   top: 10px;
   display: inline-block;
@@ -229,9 +204,7 @@ label {
   cursor: pointer;
   margin: 10px;
   z-index: 3;
-  position: fixed;
-}
-
+  position: fixed;}
 .bar {
   display: block;
   background-color:white;
@@ -288,7 +261,10 @@ p {
   }
 
   .aside-right {
-    width: 60%;
+    width: 100%;
+  }
+  .aside-list {
+    text-align: center;;
   }
 }
 
@@ -322,10 +298,10 @@ p {
 #vertical .carousel-cell {
   width: 900px;
   height:500px;
-  margin-top: 64%;
+  margin-top: 30vh;
 }
 .vertical-wrapper {
-  height:1vh;
+  height:0vh;
   width: 50vh;
   margin: auto;
 }
@@ -357,15 +333,20 @@ p {
   color: white;
   text-align: left;
 }
+/* 
+  font-family: bureau-grot-extra-compressed, sans-serif;
+*/
 #titles h2 {
   top: 0px;
-  font-family: 'GiraffeyRegular';
-  text-transform: uppercase;
-  letter-spacing: .115em;
+  font-family: trumpgothicpro, sans-serif;
   font-weight: 400;
-  font-style: normal;
-  font-size: 9.5vh;
-  line-height: 9vh;
+  font-style: normal;  
+  text-transform: uppercase;
+
+  letter-spacing: .1em;
+
+  font-size: 10vh;
+  line-height: 11vh;
   color: white;
   opacity: .65;
   margin: auto;
@@ -374,25 +355,17 @@ p {
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
 }
-#titles h3 {
-  text-align: left;
-  top: 0px;
-  font-family: ibm-plex-mono, sans-serif;
-
-  font-weight: 300;
-  
-  font-style: normal;  
-  text-transform: uppercase;
-  font-size: 2.5vh;
-  line-height: 1.25vh;
-  letter-spacing: .12em;
-  
-  color: white;
-  -webkit-transform: skewY(-23deg) scaleX(0.78);
-  transform: skewY(-23deg) scaleX(0.78);
-  -webkit-transform-origin: 0 0;
-  transform-origin: 0 0;
+@media only screen and (max-width: 600px) {
+  #titles h2 {
+font-size:10vh;
+   }
+   #titles h3 {
+     font-size: 2vh;
+   }
 }
+
+
+
 /* -------------------------------- vertical */
 #vertical {
   overflow: visible;
@@ -407,9 +380,7 @@ p {
   width: 93%;
   height:900px;
 }
-.vertical-wrapper {
-  height:0vh;
-}
+
 .vertical-container {
   height: 100%;
   width:100%;
@@ -427,6 +398,7 @@ p {
 #vertical h2 {
   top: 0px;
   font-family: 'GiraffeyRegular';
+
   text-transform: uppercase;
   letter-spacing: .15em;
   font-weight: 400;
@@ -443,7 +415,7 @@ p {
   text-transform: uppercase;
   font-weight: 400;
   font-style: normal;
-  font-size: 2.5vh;
+  font-size: 2.3vh;
   line-height: 1.25vh;
   letter-spacing: .12em;
   
@@ -455,13 +427,12 @@ p {
 }
 /* -------------------------------- main */
 #main #hdd {
-  background-image: url('img/hdd.gif');
   background-repeat: no-repeat;
   background-size: cover;
   border-radius:25%;
 }
 #hdd:hover {
-  background: white;
+  box-shadow: 0 0 0 5px #ffffff;
   cursor: pointer;
 }
 
@@ -472,58 +443,15 @@ p {
 #hdd:active {
   box-shadow: 0 0 0 5px #19F;
 }
-#main #artp {
-  background-image: 
-  linear-gradient(rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)), 
-  url('./img/flux1.gif');
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius:25%;
 
-}
-#main #rdc {
-  background-image: url('img/rdc.gif');
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius:25%;
-
-}
-#main #fm {
-  background-image: url('img/fm.gif');
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius:25%;
-
-}
-#main #biggie {
-  background-image: url('img/unsolved.gif');
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius:25%;
-
-}
-#main #kam {
-  background-image: url('img/relax.gif');
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius:25%;
-
-}
-#main #legion {
-  background-image: url('img/legion.gif');
+#main #motion {
+  background-image: url('img/emotion.gif');
   background-repeat: no-repeat;
   background-size: cover;
   border-radius:25%;
 }
-#main #misc {
-  background-image: url('img/hdd.gif');
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius:25%;
-}
-#main #balloons {
-  background-image: url('img/balloons.gif');
+#main #emotion {
+  background-image: url('img/emotion.gif');
   background-repeat: no-repeat;
   background-size: cover;
   border-radius:25%;
@@ -538,6 +466,7 @@ p {
 .main-square {
   max-width: 41vh;
   margin: auto;
+  overflow: visible;
 }
 /* -------------------------------- title */
 #titles {
@@ -554,22 +483,34 @@ p {
 #titles .carousel-cell {
   width: 100%;
   height:900px;
-  margin-top: 64%;
+  margin-top: 35%;
 }
+@media only screen and (max-width: 600px) {
+  #titles .carousel-cell {
+    width: 100%;
+    height:900px;
+    margin-top: 30%;
+  }
+ }
 .title-wrapper {
-  height:45vh;
-  margin-top:100x;
+  height:41vh;
 }
 .title-container {
   height: 100%;
   width:100%;
   margin-left: 55px;
 }
-.title-square {
-  width: 334px;
-  height:50%;
-  margin: auto;   
+.title-square .carousel-cell.is-nav-selected {
+  background: transparent;
+  opacity: 1;
 }
+.title-square {
+  width: 344px;
+  height:50%;
+  margin: auto; 
+}
+
+
 @media only screen and (max-width: 600px) {
  .title-square {
   width: 334px;
@@ -581,40 +522,7 @@ p {
   color: white;
   text-align: left;
 }
-#titles h2 {
-  top: 0px;
-  font-family: 'GiraffeyRegular';
-  text-transform: uppercase;
-  letter-spacing: .115em;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 9.5vh;
-  line-height: 9vh;
-  color: white;
-  opacity: .65;
-  margin: auto;
-  -webkit-transform: skewY(-23deg) scaleX(0.78);
-  transform: skewY(-23deg) scaleX(0.78);
-  -webkit-transform-origin: 0 0;
-  transform-origin: 0 0;
-}
-#titles h3 {
-  text-align: left;
-  top: 0px;
-  font-family: 'B612 Mono', monospace;
-  text-transform: uppercase;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2.5vh;
-  line-height: 1.25vh;
-  letter-spacing: .12em;
-  
-  color: white;
-  -webkit-transform: skewY(-23deg) scaleX(0.78);
-  transform: skewY(-23deg) scaleX(0.78);
-  -webkit-transform-origin: 0 0;
-  transform-origin: 0 0;
-}
+
 /* -------------------------------- icon */
 #icons #hdd {
   background-image: url('img/hdd_icon.png');
@@ -666,7 +574,6 @@ p {
 #icons .carousel-cell.is-nav-selected {
   background: transparent;
   transform: scale(.75);
-
 }
 #icons .carousel-cell {
   height: 19vh;
@@ -682,7 +589,7 @@ p {
   width: 151px;
 }
 .icon-wrapper {
-  height:19vh;
+  height:15vh;
 }
 .icon-container {
   width: 100%;
@@ -708,7 +615,7 @@ p {
   height:900px;
 }
 .button-wrapper {
-  height:20vh;
+  height:2vh;
 }
 .button-container {
   height: 100%;
@@ -782,17 +689,7 @@ h2 {
     text-transform: uppercase;
     opacity: 1;
     letter-spacing: 0.025em;
-  
 }
-
-
-
-
-
-
-
-
-
 
 
 a:hover {
@@ -809,7 +706,7 @@ text-transform: uppercase;
   
   font-style: normal;
 
-  font-size: 2.25vh;
+  font-size: 2.vh;
   line-height: 1.25vh;
   letter-spacing: .12em;
   
@@ -891,4 +788,12 @@ text-transform: uppercase;
 
 .carousel-nav .carousel-cell.is-nav-selected {
   background: transparent;
+}
+#videoBG {
+  width: 100%;
+  height:41vh;
+  position:fixed;
+  z-index: -1;
+  border-radius:25%;
+object-fit: fill;
 }

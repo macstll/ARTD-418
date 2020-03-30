@@ -33,12 +33,11 @@
       <div class="clickies-container">
         <a href="index.html">
           <div class="logo">
-             <img src="img/darker_logo.gif" style="width:60px; position: fixed; margin-right: 30px;">
+             <img src="img/mlogo.png" id="logo">
           </div>
         </a>
-        <div class="name"><h1>Madeline Castillo</h1></div>
+        <a href="about.html" id="name" target="_top" style="color:white;">Madeline Castillo</a>
       </div>
-
     </nav>
 <!-- main content -->
 <!-- partial:index.partial.html -->
@@ -50,9 +49,13 @@
   <div class="main-container">
     <div class="main-square">
       <div class="carousel carousel-main" id="main">
-      <a href="wolves.html" class="carousel-cell" id="hdd"></a>
-      <a href="legion.html" class="carousel-cell" id="legion"></a>
-      <a href="legion.html" class="carousel-cell" id="legion"></a>
+      <a href="wolves.html" class="carousel-cell" id="hdd">
+        <video id="videoBG" poster="poster.JPG" playsinline autoplay muted loop>
+          <source src="img/wo.mp4" type="video/mp4">
+      </video>
+      </a>
+      <a href="motion.html" class="carousel-cell" id="motion"></a>
+      <a href="emotion.html" class="carousel-cell" id="emotion"></a>
 
       </div>
     </div>
@@ -144,7 +147,16 @@
             </div>
             <div class="carousel-cell">
               <div class="project-name">
-                <a href="legion.html">
+                <a href="motion.html">
+                  <em>
+                    <h2>See Project</h2>
+                  </em>
+                </a>
+              </div>
+            </div>
+            <div class="carousel-cell">
+              <div class="project-name">
+                <a href="emotion.html">
                   <em>
                     <h2>See Project</h2>
                   </em>
@@ -175,7 +187,8 @@
       <div class="aside-section aside-right">
         <ul class="aside-list">
             <li><a href="wolves.html" class="aside-anchor">The Wolves</a></li>
-            <li><a href="legion.html" class="aside-anchor">Legion</a></li>
+            <li><a href="motion.html" class="aside-anchor">Motion Project</a></li>
+            <li><a href="emotion.html" class="aside-anchor">Emotion Project</a></li>
         </ul>
       </div>
     </aside>

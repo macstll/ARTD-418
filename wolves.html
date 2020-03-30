@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" href="https://use.typekit.net/yrn7bzb.css">
 
-  <link rel="stylesheet" href="./dist/css/aos.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
@@ -20,10 +20,10 @@
       <div class="clickies-container">
         <a href="index.html">
           <div class="logo">
-             <img src="img/darker_logo.gif" style="width:60px; position: fixed">
+             <img src="img/mlogo.png" id="logo">
           </div>
         </a>
-        <div class="name"><h1>Madeline Castillo</h1></div>
+        <a href="about.html" id="name" target="_top" style="color:white;">Madeline Castillo</a>
       </div>
     </nav>
 <!-- main content -->
@@ -45,8 +45,10 @@
              2020
               </div></div>
              <div class="image-container" >
-                 <img src="img/hdd_icon.png" data-aos="zoom-out" id="float">
-             </div>
+              <video id="videoBG" poster="poster.JPG" playsinline autoplay muted loop>
+                <source src="img/wo.mp4" type="video/mp4">
+            </video>
+            </div>
             <div class="top-container" data-aos="zoom-out">
              <div class="top-title-text">
                  <h1 class="top-title">
@@ -57,11 +59,19 @@
             </div>
          </div>
 
-         <div class="first-container">
-            <div class="second-text" data-aos="fade-up">
-                <h2>The Captioning of live performances</h2>
-            </div>
-        </div>
+         <div id="scrolling-wrapper" id="scrolling">
+          <div class="grid-container" id="scrolling">
+              <div class="left">
+                  <div class="left-text" id="left-text"><h4 class="top-left-text" data-aos="fade-down">Captioning the wolves<span></span></h4></div>
+                  <div class="left-img" id="left-img"><img src="img/chat1.png" data-aos="fade-right" id="top-left" style="border-radius:7%;"></div>
+              </div>
+                  <div class="right"><div class="right-img"><img src="img/chat2.png" data-aos="fade-left" style="border-radius: 15%;"></div></div>
+                  <div class="center" data-aos="fade-down"><div class="vertical-title"><h2 class="vertical-text"></h2></div></div>
+                  <div class="far-left"><div class="vertical-title" data-aos="fade-up"><h2 class="vertical-text"></h2></div></div>
+                  <div class="far-right" data-aos="fade-up"><div class="vertical-title"><h2 class="vertical-text"><span>s</span></h2></div></div>
+          </div>
+      </div>
+
   
 
          <div class="row1">
@@ -91,9 +101,8 @@
                               </div>
                               <div class="box_ box1">
                                   <div class="nested2">
- The Wolves Project is an explorations into live performance captioning, featuring real-time voice-to-speech visuals for a Google Glass platform. 
+ The Wolves Project is an exploration into live performance captioning, featuring real-time voice-to-speech visuals for Google Glass. 
                                  </div>
-                                  
                               </div>
                           </div>
                       </div>
@@ -101,11 +110,20 @@
               </div>
           </div>
 
-
+          <div style="--aspect-ratio: 16/9;" data-aos="flip-down" z-index:99999999999; >
+            <iframe 
+              src="img/wolves.mp4"
+              width="1600"
+              height="900"
+              frameborder="0"
+              z-index="999"
+            >
+            </iframe>
+          </div>
 
 
 <div class="bottom-text">
-   <a href="legion.html" class=bottom-texts style="color: black; text-decoration: none;">
+   <a href="motion.html" class=bottom-texts style="color: black; text-decoration: none;">
     <h2>
         next
     </h2>
@@ -161,10 +179,11 @@
     <aside>
       <div class="aside-section aside-right">
           <div class="background">
-        <ul class="aside-list">
-                <li><a href="wolves.html" class="aside-anchor">The Wolves</a></li>
-                <li><a href="legion.html" class="aside-anchor">Emotion</a></li>
-        </ul>
+            <ul class="aside-list">
+              <li><a href="wolves.html" class="aside-anchor">The Wolves</a></li>
+              <li><a href="motion.html" class="aside-anchor">Motion Project</a></li>
+              <li><a href="emotion.html" class="aside-anchor">Emotion Project</a></li>
+          </ul>
       </div>
     </div>
     </aside>
